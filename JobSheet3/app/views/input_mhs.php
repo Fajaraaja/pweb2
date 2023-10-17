@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<div class="px-2 py-2">
+    <a href="tampil_mahasiswa.php" class="btn btn-secondary  mb-3"><- Kembali</a>
+</div>
 <div class="col-12">
     <div class="card-body">
         <h3>Tambah Data Mahasiswa</h3>

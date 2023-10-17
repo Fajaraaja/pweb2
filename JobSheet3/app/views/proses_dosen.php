@@ -8,7 +8,7 @@ if ($aksi == "tambah") {
     header("location:tampil_dosen.php?tambah=true");
 } elseif ($aksi == "update") {
     $db->update_dosen($_POST['id'], $_POST['nama'], $_POST['nidn'], $_POST['alamat']);
-    header("location:tampil_dosen.php");
+    header("location:tampil_dosen.php?id=$id&update=true");
 } elseif ($aksi == "hapus") {
     $db->hapus_dosen($_GET['id']);
     header("location:tampil_dosen.php?id=$id&delete=true");

@@ -8,7 +8,7 @@ if ($aksi == "tambah") {
     header("location:tampil_mahasiswa.php?tambah=true");
 } elseif ($aksi == "update") {
     $db->update($_POST['id'], $_POST['nama'], $_POST['nim'], $_POST['alamat']);
-    header("location:tampil_mahasiswa.php");
+    header("location:tampil_mahasiswa.php?id=$id&update=true");
 } elseif ($aksi == "hapus") {
     $db->hapus($_GET['id']);
     header("location:tampil_mahasiswa.php?id=$id&delete=true");

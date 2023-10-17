@@ -1,17 +1,34 @@
 <?php
+include 'navbar.php';
 include '../classes/database.php';
 $db = new database();
 ?>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dosen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
 
-<div class="card-body">
-    <h5 class="card-title">Daftar Dosen</h5>
-    <a href="input_dosen.php" class="btn btn-success btn-sm">Tambah Data Dosen</a>
-    <br>
-    <br>
-    <table class="table table-striped" style="width : 70%">
-        <tr>
+<?php
+
+if (isset($_GET['update']) && $_GET['update'] == "true") {
+    echo '<div class="alert alert-warning" id="successAlert" role="alert">Update Berhasil!</div>';
+}
+if (isset($_GET['delete']) && $_GET['delete'] == "true") {
+    echo '<div class="alert alert-danger" id="successAlert" role="alert">Berhasil Hapus Data!</div>';
+}
+if (isset($_GET['tambah']) && $_GET['tambah'] == "true") {
+    echo '<div class="alert alert-success" id="successAlert" role="alert">Berhasil Menambahkan Data!</div>';
+}
+?>
+
+<div class="card-body px-5 py-2">
+    <h3 class="card-title py-2">Daftar Dosen</h3>
+    <a href="input_dosen.php" class="btn btn-primary btn-sm mb-3">+ Tambah Data Dosen</a>
+    <table class="table table-striped table-bordered">
+        <tr class="table-secondary" style="text-align : center">
             <td>No</td>
             <td>Nama</td>
             <td>NIDN</td>
@@ -37,7 +54,18 @@ $db = new database();
         ?>
     </table>
 </div>
+<script>
+    function hideAlert() {
+        var successAlert = document.getElementById("successAlert");
+        if (successAlert) {
+            successAlert.style.display = "none";
+        }
+    }
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    var successAlert = document.getElementById("successAlert");
+    if (successAlert) {
+        successAlert.style.display = "block";
+
+        setTimeout(hideAlert, 2000);
+    }
+</script>
