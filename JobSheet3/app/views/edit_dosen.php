@@ -2,15 +2,15 @@
     include '../classes/database.php';
     $db = new database();
 
-    $id_mahasiswa = $_GET['id'];
-    foreach ($db->edit($id_mahasiswa) as $d) {
+    $id = $_GET['id'];
+    foreach ($db->edit_dosen($id) as $d) {
     ?>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
      <div class="col-12">
          <div class="card-body">
-             <h3>Edit Data Mahasiswa</h3>
-             <form action="proses_mhs.php?aksi=update" method="post">
+             <h3>Edit Data Dosen</h3>
+             <form action="proses_dosen.php?aksi=update" method="post">
                  <table>
                      <tr>
                          <td>Nama</td>
@@ -20,8 +20,8 @@
                          </td>
                      </tr>
                      <tr>
-                         <td>NIM</td>
-                         <td><input type="number" name="nim" value="<?php echo $d['nim'] ?>" class="form-control"></td>
+                         <td>NIDN</td>
+                         <td><input type="number" name="nidn" value="<?php echo $d['nidn'] ?>" class="form-control"></td>
                      </tr>
                      <tr>
                          <td>Alamat</td>
