@@ -14,15 +14,14 @@ $db = new database();
 
 <body>
     <?php
-
     if (isset($_GET['update']) && $_GET['update'] == "true") {
-        echo '<div class="alert alert-warning" id="successAlert" role="alert">Update Berhasil!</div>';
+        echo '<div class="alert alert-warning" id="successAlert" style="position: fixed; top: 10%; left: 40%; transform: translate(-20%, -50%); width: 300px; margin: 0 auto; border-radius: 4px; padding: 10px; text-align: center; role="alert">Update Berhasil!</div>';
     }
     if (isset($_GET['delete']) && $_GET['delete'] == "true") {
-        echo '<div class="alert alert-danger" id="successAlert" role="alert">Berhasil Hapus Data!</div>';
+        echo '<div class="alert alert-danger" id="successAlert" style="position: fixed; top: 10%; left: 40%; transform: translate(-20%, -50%); width: 300px; margin: 0 auto; border-radius: 4px; padding: 10px; text-align: center; role="alert">Data berhasil dihapus</div>';
     }
     if (isset($_GET['tambah']) && $_GET['tambah'] == "true") {
-        echo '<div class="alert alert-success" id="successAlert" role="alert">Berhasil Menambahkan Data!</div>';
+        echo '<div class="alert alert-success" id="successAlert" style="position: fixed; top: 10%; left: 40%; transform: translate(-20%, -50%); width: 300px; margin: 0 auto; border-radius: 4px; padding: 10px; text-align: center; role="alert">Berhasil Menambahkan Data!</div>';
     }
     ?>
 
