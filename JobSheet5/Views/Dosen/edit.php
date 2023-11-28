@@ -61,6 +61,8 @@ if ($dosen) {
 
                                 <?php if ($d === 'nidn') { ?>
                                     <input type="number" name="<?php echo $d; ?>" value="<?php echo $value; ?>" class="form-control" style="margin-left: 5%">
+                                <?php } elseif ($d === 'alamat') { ?>
+                                    <textarea name="<?php echo $d; ?>" cols="30" rows="5" class="form-control" style="margin-left: 5%"><?php echo $value; ?></textarea>
                                 <?php } else { ?>
                                     <input type="text" name="<?php echo $d; ?>" value="<?php echo $value; ?>" class="form-control" style="margin-left: 5%">
                                 <?php } ?>
