@@ -1,0 +1,25 @@
+# RewriteEngine On
+# RewriteBase /Jobsheet5/
+
+# # Redirects /home to index.php?page=home
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^home/?$ index.php?page=home [QSA,L]
+
+# # Redirects /mahasiswa to views/Mahasiswa/index.php?page=mahasiswa
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^mahasiswa/?$ views/Mahasiswa/index.php?page=mahasiswa [QSA,L]
+
+RewriteEngine On
+RewriteRule ^home/?$ index.php
+RewriteRule ^mahasiswa/?$ views/mahasiswa/index.php
+RewriteRule ^dosen/?$ views/Dosen/index.php
+RewriteRule ^tambahmahasiswa/?$ views/mahasiswa/tambah.php
+RewriteRule ^tambahdosen/?$ views/Dosen/tambah.php
+RewriteRule ^editmahasiswa/?$ views/mahasiswa/edit.php
+RewriteRule ^editdosen/?$ views/Dosen/edit.php
+RewriteRule ^prosesmahasiswa/?$ views/mahasiswa/proses.php
+RewriteRule ^prosesdosen/?$ views/Dosen/proses.php
+RewriteRule ^hapusmahasiswa/?$ views/mahasiswa/hapus.php
+RewriteRule ^hapusdosen/?$ views/Dosen/hapus.php
